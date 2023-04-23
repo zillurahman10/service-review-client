@@ -6,7 +6,7 @@ const Banner = () => {
         <div className='mx-24'>
             <div class="hero min-h-screen">
                 <div class="hero-content flex-col lg:flex-row-reverse">
-                    <img style={{ width: '500px' }} src={banner} class=" rounded-xl" />
+                    <img style={{ width: '500px' }} src={banner} class="rounded-xl" alt="" />
                     <div>
                         <h1 class="text-5xl font-bold text-left">Build your website with
                             <br />

@@ -1,16 +1,28 @@
 import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, NavLink } from 'react-router-dom';
+import { useAuthState, useSignOut } from 'react-firebase-hooks/auth';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import auth from '../firebase.init';
 
 const Header = () => {
     const [user, loading, error] = useAuthState(auth);
+
     const menuItems = <>
         <li><Link to='/'>Blogs</Link></li>
         <li><Link to='/allservices'>Services</Link></li>
         <li><Link to='/'>About me</Link></li>
         <li><Link to='/'>My reviews</Link></li>
     </>
+
+    // navigate to home after user loged in
+    // const navigate = useNavigate()
+    // if (user) {
+    //     navigate('/')
+    // }
+
+    // logOut function
+    // const handleLogOut = () => {
+    //     signOut()
+    // }
 
     return (
         <div>
@@ -24,7 +36,7 @@ const Header = () => {
                             {menuItems}
                         </ul>
                     </div>
-                    <a herf="" alt="" class="btn btn-ghost normal-case text-xl">ZILLUR</a>
+                    <Link to="/" class="btn btn-ghost normal-case text-xl">ZILLUR</Link>
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal px-1">
@@ -32,22 +44,22 @@ const Header = () => {
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <div class="dropdown">
+                    <div class="dropdown dropdown-end">
                         {
                             user ? <>
-                                <label tabindex="0" class="btn m-1">{user.displayName}</label>
-                                {/* <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                                    <li><a>Item 1</a></li>
-                                    <li><a>Item 2</a></li>
-                                </ul> */}
+                                <label tabindex="0" class="btn m-1">{user.displayName || user.email.slice(0, 1)}</label>
+                                <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                                    <li><a>Profile</a></li>
+                                    <li><button>Log Out</button></li>
+                                </ul>
                             </>
                                 :
-                                <button>Login</button>
+                                <Link to="login" className='btn btn-ghost'><button>Login</button></Link>
 
                         }
 
                     </div>
-                    <Link to="login" className='btn btn-ghost'></Link>
+
                 </div>
             </div>
         </div>
