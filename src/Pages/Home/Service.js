@@ -1,7 +1,12 @@
 import React from 'react';
 import './Service.css'
+import { useNavigate } from 'react-router-dom';
 
 const Service = ({ serviceData }) => {
+    const navigate = useNavigate()
+    const details = () => {
+        navigate(`/servicedetails/${serviceData._id}`)
+    }
     return (
         <div>
             <div class="card w-96 glass service-card">
@@ -10,8 +15,8 @@ const Service = ({ serviceData }) => {
                     <h2 class="card-title">{serviceData?.name}</h2>
                     <p>Developer: {serviceData?.developer}</p>
                     <p>{serviceData?.description}</p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-outline btn-primary w-full">Details</button>
+                    <div class="card-actions ">
+                        <button onClick={() => details()} class="btn btn-outline btn-primary w-full">Details</button>
                     </div>
                 </div>
             </div>

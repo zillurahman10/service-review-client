@@ -24,7 +24,9 @@ const Services = () => {
 
                 </div>
             </div>
-            <Link to="/allservices" className='btn btn-outline btn-success w-24 mx-auto'>See all</Link>
+            <div className='flex justify-center mt-5'>
+                <Link to="/allservices" className='btn btn-outline btn-success w-52'>See all</Link>
+            </div>
         </>
     );
 };

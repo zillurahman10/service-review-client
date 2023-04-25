@@ -23,7 +23,7 @@ const Login = () => {
                         </form>
                         <p className='text-center'>---------- or ----------</p>
                         <button onClick={() => signInWithGoogle()} className='btn btn-outline btn-primary w-full'>Sign in with GOOGLE</button>
-                        <p className='mt-8'>New in this website? <Link className='underline' to='/signup'>Create an account</Link></p>
+                        <p className='mt-8'>New in this website? <Link className='underline' to='/register'>Create an account</Link></p>
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@ const AllServices = () => {
             .then(data => setServices(data))
     }, [])
     return (
-        <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 w-full mx-auto'>
+        <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 place-items-center'>
             {
                 services.map(
                     singleService => <SingleService service={singleService}></SingleService>

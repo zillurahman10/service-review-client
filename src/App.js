@@ -6,6 +6,8 @@ import Footer from './Shared/Footer';
 import Login from './Pages/Login/Login';
 import AllServices from './Pages/AllServices/AllServices';
 import Service from './Pages/Home/Service';
+import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
+import Register from './Pages/Register/Register';
 
 function App() {
   return (
@@ -14,8 +16,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/allservices' element={<AllServices></AllServices>}></Route>
-        <Route path='/servicedetails' element={<Service></Service>}></Route>
+        <Route path='/servicedetails/:id' element={<ServiceDetails></ServiceDetails>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

@@ -5,6 +5,7 @@ import auth from '../firebase.init';
 
 const Header = () => {
     const [user, loading, error] = useAuthState(auth);
+    const [signOut, outLoading, outError] = useSignOut(auth);
 
     const menuItems = <>
         <li><Link to='/'>Blogs</Link></li>
@@ -50,7 +51,7 @@ const Header = () => {
                                 <label tabindex="0" class="btn m-1">{user.displayName || user.email.slice(0, 1)}</label>
                                 <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
                                     <li><a>Profile</a></li>
-                                    <li><button>Log Out</button></li>
+                                    <li><button onClick={() => signOut()}>Log Out</button></li>
                                 </ul>
                             </>
                                 :
