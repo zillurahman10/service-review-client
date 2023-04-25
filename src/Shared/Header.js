@@ -9,9 +9,8 @@ const Header = () => {
 
     const menuItems = <>
         <li><Link to='/'>Blogs</Link></li>
-        <li><Link to='/allservices'>Services</Link></li>
         <li><Link to='/'>About me</Link></li>
-        <li><Link to='/'>My reviews</Link></li>
+        <li><Link to='/myreviews'>My reviews</Link></li>
     </>
 
     // navigate to home after user loged in

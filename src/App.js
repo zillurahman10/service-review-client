@@ -8,6 +8,7 @@ import AllServices from './Pages/AllServices/AllServices';
 import Service from './Pages/Home/Service';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import Register from './Pages/Register/Register';
+import MyReviews from './Pages/MyReviews/MyReviews';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/allservices' element={<AllServices></AllServices>}></Route>
+        <Route path='/myreviews' element={<MyReviews></MyReviews>}></Route>
         <Route path='/servicedetails/:id' element={<ServiceDetails></ServiceDetails>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>

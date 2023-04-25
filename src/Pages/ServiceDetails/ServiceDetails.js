@@ -1,21 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Review from '../Reviews/Review';
-import { ToastContainer, toast } from 'react-toastify';
 
 const ServiceDetails = () => {
-    <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-    />
     const [details, setDetails] = useState({})
     const [reviews, setReviews] = useState([])
     const [refetch, setRefetch] = useState(false)
